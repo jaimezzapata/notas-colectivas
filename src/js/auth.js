@@ -7,7 +7,7 @@ document.getElementById("registroForm")?.addEventListener("submit", (e) => {
   const contraseña = e.target.contraseña.value;
   const exito = registrarUsuario({ nombre, correo, contraseña });
   if (exito) {
-    window.location.href = "login.html";
+    window.location.href = "/public/login.html";
   } else {
     alert("Este correo ya está registrado.");
   }
@@ -21,7 +21,7 @@ document.getElementById("loginForm")?.addEventListener("submit", (e) => {
   const usuario = verificarCredenciales(correo, contraseña);
   if (usuario) {
     localStorage.setItem("usuario", JSON.stringify(usuario));
-    window.location.href = "tablero.html";
+    window.location.href = "/public/tablero.html";
   } else {
     alert("Correo o contraseña incorrectos.");
   }
