@@ -83,25 +83,26 @@ Construir una SPA moderna, modular y responsiva que permita:
 ```js
 notas-colectivas/
 │
+├── index.html                 # Página inicial
 ├── /public/
-│   ├── tablero.html           # Página principal donde se ven las notas
-│   ├── login.html             # Página de inicio de sesión
-│   ├── registro.html          # Página de registro de usuario
-│   ├── crearNota.html         # Página de registro de nota
-│   └── error.html             # Página de error (opcional)
+│   ├── login.html             # Inicio de sesión
+│   ├── registro.html          # Registro de usuario
+│   ├── tablero.html           # Vista de todas las notas
+│   ├── crearNota.html         # Crear nueva nota
+│   ├── editarNota.html        # Editar nota existente
+│   └── error.html             # Página de error dinámica
 │
 ├── /src/
 │   ├── /js/
-│   │   ├── auth.js            # Lógica para el formulario de ingreso y registro
-│   │   ├── tablero.js         # Lógica para mostrar y gestionar notas
-│   │   ├── storageService.js  # Módulo para trabajar con LocalStorage
-│   │   ├── userService.js     # Módulo para trabajar con usuarios
-│   │   └── utils.js           # Funciones auxiliares (formato fecha, etc.)
+│   │   ├── auth.js            # Registro e inicio de sesión
+│   │   ├── tablero.js         # Lógica de render y filtros
+│   │   ├── crearNota.js       # Crear nota nueva
+│   │   ├── editarNota.js      # Editar nota por ID
+│   │   ├── storageService.js  # Acceso a localStorage
+│   │   ├── userService.js     # Validaciones, sesión, protección
+│   │   └── utils.js           # Redirecciones de error
 │   └── /css/
-│       └── styles.css         # Estilos globales (si aplica)
-│
-├── index.html                 # Página de inicio (login o entrada)
-└── README.md
+│       └── styles.css         # Estilos globales (opcional)
 
 ```
 

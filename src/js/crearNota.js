@@ -1,13 +1,12 @@
 import { obtenerDatos, guardarDatos } from "./storageService.js";
 import { protegerRuta } from "./userService.js";
+import { alertaError, alertaExito } from "./utils.js";
 
-// 🧠 Verifica sesión activa
 const usuarioActivo = protegerRuta()
 if (!usuarioActivo) {
   window.location.href = "./login.html";
 }
 
-// 📝 Maneja la creación del formulario
 const formulario = document.getElementById("formNota");
 
 formulario.addEventListener("submit", (e) => {
@@ -15,11 +14,10 @@ formulario.addEventListener("submit", (e) => {
 
   const contenido = e.target.contenido.value.trim();
   if (!contenido) {
-    alert("El contenido de la nota no puede estar vacío.");
-    return;
+    return alertaError("Campo vacío", "El contenido de la nota no puede estar vacío.");
   }
+  alertaExito("Nota guardada", "Tu nota fue registrada con éxito.");
 
-  // Obtener y actualizar base de datos
   const db = obtenerDatos();
 
   const nuevaNota = {
@@ -27,7 +25,7 @@ formulario.addEventListener("submit", (e) => {
     contenido,
     creadaPor: usuarioActivo.nombre,
     fechaCreacion: new Date().toISOString(),
-    historialEdiciones: [] // Historial vacío al crear
+    historialEdiciones: [] 
   };
 
   db.notas.push(nuevaNota);
