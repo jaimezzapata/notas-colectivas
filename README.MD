@@ -73,7 +73,6 @@ Construir una SPA moderna, modular y responsiva que permita:
 notas-colectivas/
 │
 ├── /public/
-│   ├── index.html             # Página de inicio (login o entrada)
 │   ├── tablero.html           # Página principal donde se ven las notas
 │   └── error.html             # Página de error (opcional)
 │
@@ -87,6 +86,7 @@ notas-colectivas/
 │   └── /css/
 │       └── styles.css         # Estilos de Tailwind
 │
+├── index.html                 # Página de inicio (login o entrada)
 └── README.md
 
 ```
