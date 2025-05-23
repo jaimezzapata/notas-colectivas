@@ -3,7 +3,8 @@ import { protegerRuta } from "./userService.js";
 import { confirmarAccion } from "./utils.js";
 
 const usuarioActivo = protegerRuta();
-if (!usuarioActivo) window.location.href = "./login.html";
+if (!usuarioActivo) window.location.href = "/login.html";
+
 document.getElementById("usuarioActivo").textContent = `👋 Hola, ${usuarioActivo.nombre}`;
 
 const contenedorNotas = document.getElementById("contenedorNotas");
@@ -45,8 +46,8 @@ function crearNotaCard(nota) {
         <summary class="cursor-pointer text-blue-700 font-medium">📝 Ver historial de ediciones</summary>
         <ul class="list-disc pl-5 mt-2 space-y-1">
           ${nota.historialEdiciones.map(
-      ed => `<li>${ed.editadaPor} — ${new Date(ed.fechaEdicion).toLocaleString()}</li>`
-    ).join("")}
+            ed => `<li>${ed.editadaPor} — ${new Date(ed.fechaEdicion).toLocaleString()}</li>`
+          ).join("")}
         </ul>
       </details>
     `;
@@ -60,7 +61,7 @@ function crearNotaCard(nota) {
     </div>
     ${historial}
     <div class="flex justify-between items-center mt-4">
-      <a href="./editarNota.html?id=${nota.id}" class="text-sm text-blue-600 hover:underline">✏️ Editar</a>
+      <a href="/editarNota.html?id=${nota.id}" class="text-sm text-blue-600 hover:underline">✏️ Editar</a>
       <button data-id="${nota.id}" class="text-sm text-red-600 hover:underline eliminar-btn">🗑️ Eliminar</button>
     </div>
   `;
@@ -79,7 +80,7 @@ formFiltros.addEventListener("submit", (e) => {
     const coincideAutor = autor ? nota.creadaPor.toLowerCase().includes(autor) : true;
     const coincideCreacion = desdeCreacion ? new Date(nota.fechaCreacion) >= new Date(desdeCreacion) : true;
     const coincideEdicion = desdeEdicion
-      ? nota.fechaEdicion && new Date(nota.fechaEdicion) >= new Date(desdeEdicion)
+      ? nota.historialEdiciones?.some(e => new Date(e.fechaEdicion) >= new Date(desdeEdicion))
       : true;
 
     return coincideAutor && coincideCreacion && coincideEdicion;
@@ -91,7 +92,7 @@ formFiltros.addEventListener("submit", (e) => {
 const btnCerrarSesion = document.getElementById("btnCerrarSesion");
 btnCerrarSesion?.addEventListener("click", () => {
   localStorage.removeItem("usuario");
-  window.location.href = "./login.html";
+  window.location.href = "/login.html";
 });
 
 renderizarNotas(notas);

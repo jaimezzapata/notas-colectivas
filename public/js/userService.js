@@ -1,5 +1,6 @@
 import { inicializarStorage, obtenerDatos, guardarDatos } from "./storageService.js";
 
+// Asegura que haya una base inicial
 inicializarStorage();
 
 export function registrarUsuario({ nombre, correo, contraseña }) {
@@ -11,7 +12,7 @@ export function registrarUsuario({ nombre, correo, contraseña }) {
     id: Date.now(),
     nombre,
     correo,
-    contraseña,
+    contraseña, // En producción real: se debe hashear
     registradoEn: new Date().toISOString()
   };
 
@@ -28,9 +29,7 @@ export function verificarCredenciales(correo, contraseña) {
 export function protegerRuta() {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
   if (!usuario) {
-    window.location.href = "./error.html?code=403&title=Acceso denegado&msg=Debes iniciar sesión para continuar.";
+    window.location.href = "/error.html?code=403&title=Acceso denegado&msg=Debes iniciar sesión para continuar.";
   }
   return usuario;
 }
-
-

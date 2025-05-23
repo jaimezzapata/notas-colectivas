@@ -2,9 +2,10 @@ import { obtenerDatos, guardarDatos } from "./storageService.js";
 import { protegerRuta } from "./userService.js";
 import { alertaError, alertaExito } from "./utils.js";
 
-const usuarioActivo = protegerRuta()
+// Proteger la vista
+const usuarioActivo = protegerRuta();
 if (!usuarioActivo) {
-  window.location.href = "./login.html";
+  window.location.href = "/login.html";
 }
 
 const formulario = document.getElementById("formNota");
@@ -16,7 +17,6 @@ formulario.addEventListener("submit", (e) => {
   if (!contenido) {
     return alertaError("Campo vacío", "El contenido de la nota no puede estar vacío.");
   }
-  alertaExito("Nota guardada", "Tu nota fue registrada con éxito.");
 
   const db = obtenerDatos();
 
@@ -25,17 +25,22 @@ formulario.addEventListener("submit", (e) => {
     contenido,
     creadaPor: usuarioActivo.nombre,
     fechaCreacion: new Date().toISOString(),
-    historialEdiciones: [] 
+    historialEdiciones: []
   };
 
   db.notas.push(nuevaNota);
   guardarDatos(db);
 
-  window.location.href = "./tablero.html";
+  alertaExito("Nota guardada", "Tu nota fue registrada con éxito.");
+
+  setTimeout(() => {
+    window.location.href = "/tablero.html";
+  }, 1500);
 });
 
+// 🔐 Cierre de sesión
 const btnCerrarSesion = document.getElementById("btnCerrarSesion");
 btnCerrarSesion?.addEventListener("click", () => {
   localStorage.removeItem("usuario");
-  window.location.href = "./login.html";
+  window.location.href = "/login.html";
 });

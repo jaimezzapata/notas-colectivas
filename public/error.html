@@ -6,8 +6,8 @@
     <title>Error | Notas Colectivas</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
   </head>
+
   <body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex items-center justify-center font-sans text-gray-800">
 
     <main class="bg-white max-w-xl w-full p-10 rounded-2xl shadow-lg text-center animate-fade-in">
@@ -15,7 +15,7 @@
       <h2 id="tituloError" class="text-2xl font-semibold text-blue-900 mb-2">Error desconocido</h2>
       <p id="mensajeError" class="text-gray-600 mb-6">Algo salió mal.</p>
       <a
-        href="./index.html"
+        href="/index.html"
         class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-medium shadow hover:bg-blue-700 transition"
       >
         Volver al inicio
@@ -44,6 +44,7 @@
           transform: scale(1);
         }
       }
+
       .animate-fade-in {
         animation: fade-in 0.6s ease-out;
       }

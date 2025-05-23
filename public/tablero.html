@@ -7,7 +7,6 @@
     <title>Tablero | Notas Colectivas</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
 
 <body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen font-sans text-gray-800">
@@ -22,7 +21,7 @@
                 <button id="btnCerrarSesion" class="hover:text-blue-300 transition duration-200">
                     Cerrar sesión
                 </button>
-                <a href="./about.html" class="hover:text-blue-300 transition duration-200">Acerca de</a>
+                <a href="/about.html" class="hover:text-blue-300 transition duration-200">Acerca de</a>
             </nav>
         </div>
     </header>
@@ -31,7 +30,7 @@
     <main class="max-w-5xl mx-auto py-10 px-4 animate-fade-in">
         <div class="flex justify-between items-center mb-8">
             <h2 class="text-3xl font-semibold text-blue-900">Todas las notas</h2>
-            <a href="./crearNota.html"
+            <a href="/crearNota.html"
                 class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium shadow transition transform hover:scale-105">
                 + Crear nota
             </a>
@@ -66,7 +65,6 @@
             </form>
         </section>
 
-
         <!-- 📋 Contenedor de tarjetas de notas -->
         <section id="contenedorNotas" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <!-- Las notas se insertarán aquí dinámicamente con JS -->
@@ -93,7 +91,7 @@
     </style>
 
     <!-- JS para cargar las notas -->
-    <script type="module" src="../src/js/tablero.js"></script>
+    <script type="module" src="/js/tablero.js"></script>
 </body>
 
 </html>
