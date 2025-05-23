@@ -67,26 +67,33 @@ Construir una SPA moderna, modular y responsiva que permita:
 
 ```
 
-## 🗃️ Encarpetado
+## 📂 Encarpetado
 
 ```js
 notas-colectivas/
 │
 ├── /public/
 │   ├── tablero.html           # Página principal donde se ven las notas
+│   ├── login.html             # Página de inicio de sesión
+│   ├── registro.html          # Página de registro de usuario
+│   ├── crearNota.html         # Página de registro de nota
 │   └── error.html             # Página de error (opcional)
 │
 ├── /src/
 │   ├── /js/
-│   │   ├── login.js           # Lógica para el formulario de ingreso
+│   │   ├── auth.js            # Lógica para el formulario de ingreso y registro
 │   │   ├── tablero.js         # Lógica para mostrar y gestionar notas
 │   │   ├── storageService.js  # Módulo para trabajar con LocalStorage
 │   │   ├── userService.js     # Módulo para trabajar con usuarios
 │   │   └── utils.js           # Funciones auxiliares (formato fecha, etc.)
 │   └── /css/
-│       └── styles.css         # Estilos de Tailwind
+│       └── styles.css         # Estilos globales (si aplica)
 │
 ├── index.html                 # Página de inicio (login o entrada)
 └── README.md
 
 ```
+
+---
+## ⚠ Consideraciones
+Este proyecto fue creado con fines educativos. No incluye autenticación real ni control de acceso. Todos los datos son manipulables por cualquier usuario con acceso al navegador. Ideal para prácticas académicas y ejercicios de programación front-end con módulos.
