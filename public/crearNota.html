@@ -61,6 +61,15 @@
 
   <!-- JS para crear la nota -->
   <script type="module" src="../src/js/crearNota.js"></script>
+  <script>
+    const toggleMenu = document.getElementById("toggleMenu");
+    const menuResponsive = document.getElementById("menuResponsive");
+
+    toggleMenu?.addEventListener("click", () => {
+      menuResponsive.classList.toggle("hidden");
+    });
+
+  </script>
 </body>
 
 </html>
