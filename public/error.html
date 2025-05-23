@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error | Notas Colectivas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex items-center justify-center font-sans text-gray-800">
+
+    <main class="bg-white max-w-xl w-full p-10 rounded-2xl shadow-lg text-center animate-fade-in">
+      <h1 id="codigoError" class="text-6xl font-bold text-blue-700 mb-4">❌</h1>
+      <h2 id="tituloError" class="text-2xl font-semibold text-blue-900 mb-2">Error desconocido</h2>
+      <p id="mensajeError" class="text-gray-600 mb-6">Algo salió mal.</p>
+      <a
+        href="./index.html"
+        class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-medium shadow hover:bg-blue-700 transition"
+      >
+        Volver al inicio
+      </a>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const codigo = params.get("code") || "❌";
+      const titulo = params.get("title") || "Error desconocido";
+      const mensaje = params.get("msg") || "Ocurrió un problema inesperado.";
+
+      document.getElementById("codigoError").textContent = codigo;
+      document.getElementById("tituloError").textContent = titulo;
+      document.getElementById("mensajeError").textContent = mensaje;
+    </script>
+
+    <style>
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.6s ease-out;
+      }
+    </style>
+  </body>
+</html>

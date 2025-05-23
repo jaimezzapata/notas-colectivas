@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrarse | Notas Colectivas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen font-sans text-gray-800">
+
+    <!-- 🔵 Navegación -->
+    <header class="bg-blue-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide hover:scale-105 transition-transform duration-300">
+                Notas Colectivas
+            </h1>
+            <nav class="space-x-4 text-sm">
+                <a href="./login.html" class="hover:text-blue-300 transition duration-200">Iniciar Sesión</a>
+                <a href="./registro.html" class="text-blue-300">Registrarse</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 🧠 Formulario de registro -->
+    <main class="max-w-md mx-auto mt-20 p-8 bg-white rounded-2xl shadow-lg animate-slide-up">
+        <h2 class="text-2xl font-semibold text-blue-900 mb-6 text-center">Crear Cuenta</h2>
+        <form id="registroForm" class="space-y-6">
+            <div>
+                <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Carlos" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+            </div>
+            <div>
+                <label for="correo" class="block text-sm font-medium text-gray-700">Correo</label>
+                <input type="email" id="correo" name="correo" placeholder="Ej: carlos@gmail.com" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+            </div>
+            <div>
+                <label for="contraseña" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Ej: asdafd7j" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+            </div>
+            <button type="submit"
+                class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+                Registrarme
+            </button>
+        </form>
+
+        <p class="text-center text-sm text-gray-600 mt-4">
+            ¿Ya tienes cuenta?
+            <a href="./login.html" class="text-blue-700 hover:underline">Inicia sesión</a>.
+        </p>
+    </main>
+
+    <!-- ✨ Animaciones -->
+    <style>
+        @keyframes slide-up {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-up {
+            animation: slide-up 0.8s ease-out;
+        }
+    </style>
+
+    <!-- JS para manejar el registro -->
+    <script type="module" src="../src/js/auth.js"></script>
+</body>
+
+</html>

@@ -50,18 +50,29 @@ Construir una SPA moderna, modular y responsiva que permita:
     {
       id: 1,
       nombre: "Laura",
+      correo: "usuario@correo.com",
+      contraseña: "contraseñ",
       registradoEn: "2025-05-23T10:00:00Z"
     }
   ],
   notas: [
     {
-      id: 101,
-      contenido: "Revisar cronograma de actividades",
-      creadaPor: "Laura",
-      editadaPor: null,
-      fechaCreacion: "2025-05-23T10:15:00Z",
-      fechaEdicion: null
+        id: 101,
+        contenido: "Revisar cronograma de actividades",
+        creadaPor: "Laura",
+        fechaCreacion: "2025-05-23T10:15:00Z",
+        historialEdiciones: [
+            {
+            editadaPor: "Carlos",
+            fechaEdicion: "2025-05-24T11:00:00Z"
+            },
+            {
+            editadaPor: "Ana",
+            fechaEdicion: "2025-05-25T09:00:00Z"
+            }
+        ]
     }
+
   ]
 }
 

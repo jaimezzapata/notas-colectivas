@@ -1,1 +1,49 @@
-x   x
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Notas Colectivas</title>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen font-sans text-gray-800">
+
+    <!-- 🔵 Navegación -->
+    <header class="bg-blue-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide hover:scale-105 transition-transform duration-300">
+                Notas Colectivas
+            </h1>
+            <nav class="space-x-4 text-sm">
+                <a href="./public/login.html" class="hover:text-blue-300 transition duration-200">Iniciar Sesión</a>
+                <a href="./public/registro.html" class="hover:text-blue-300 transition duration-200">Registrarse</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-20 text-center">
+        <h2 class="text-4xl sm:text-5xl font-semibold text-blue-900 mb-6 animate-fade-in">
+            Colabora, comparte y construye ideas.
+        </h2>
+        <p class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto animate-slide-up">
+            Bienvenido a <strong>Notas Colectivas</strong>, un espacio digital donde puedes aportar tus ideas, leer las
+            de otros y construir conocimiento en comunidad. No necesitas cuentas complejas ni redes sociales, solo tus
+            ideas.
+        </p>
+        <div class="flex justify-center gap-6">
+            <a href="./public/registro.html"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium shadow transition transform hover:scale-105 duration-300">
+                ¡Empieza ahora!
+            </a>
+            <a href="./public/login.html"
+                class="bg-white text-blue-700 border border-blue-700 px-6 py-3 rounded-full font-medium shadow transition transform hover:scale-105 duration-300">
+                Ya tengo usuario
+            </a>
+        </div>
+    </main>
+
+</body>
+
+</html>

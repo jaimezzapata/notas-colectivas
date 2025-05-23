@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablero | Notas Colectivas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen font-sans text-gray-800">
+
+    <!-- 🔵 Navegación -->
+    <header class="bg-blue-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide hover:scale-105 transition-transform duration-300">
+                Notas Colectivas
+            </h1>
+            <nav class="space-x-4 text-sm">
+                <span id="usuarioActivo" class="text-blue-300 font-medium"></span>
+                <button id="btnCerrarSesion" class="hover:text-blue-300 transition duration-200">
+                    Cerrar sesión
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 🧠 Tablero de notas -->
+    <main class="max-w-5xl mx-auto py-10 px-4 animate-fade-in">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-semibold text-blue-900">Todas las notas</h2>
+            <a href="./crearNota.html"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium shadow transition transform hover:scale-105">
+                + Crear nota
+            </a>
+        </div>
+
+        <!-- 🔍 Filtros -->
+        <section class="bg-white p-4 rounded-lg shadow mb-8">
+            <form id="filtrosForm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div>
+                    <label for="filtroUsuario" class="block text-sm font-medium text-gray-700">Filtrar por autor</label>
+                    <input type="text" id="filtroUsuario" placeholder="Nombre del autor"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm px-3 py-2">
+                </div>
+                <div>
+                    <label for="filtroFechaCreacion" class="block text-sm font-medium text-gray-700">Desde
+                        creación</label>
+                    <input type="date" id="filtroFechaCreacion"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm px-3 py-2">
+                </div>
+                <div>
+                    <label for="filtroFechaEdicion" class="block text-sm font-medium text-gray-700">Desde
+                        edición</label>
+                    <input type="date" id="filtroFechaEdicion"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm px-3 py-2">
+                </div>
+                <div class="flex items-end">
+                    <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition">
+                        Aplicar filtros
+                    </button>
+                </div>
+            </form>
+        </section>
+
+
+        <!-- 📋 Contenedor de tarjetas de notas -->
+        <section id="contenedorNotas" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Las notas se insertarán aquí dinámicamente con JS -->
+        </section>
+    </main>
+
+    <!-- ✨ Animaciones -->
+    <style>
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out;
+        }
+    </style>
+
+    <!-- JS para cargar las notas -->
+    <script type="module" src="../src/js/tablero.js"></script>
+</body>
+
+</html>
