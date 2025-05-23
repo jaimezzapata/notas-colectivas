@@ -67,10 +67,9 @@ Construir una SPA moderna, modular y responsiva que permita:
 
 ```
 
----
-
 ## 🗃️ Encarpetado
 
+```js
 notas-colectivas/
 │
 ├── /public/
@@ -89,4 +88,5 @@ notas-colectivas/
 │       └── styles.css         # Estilos de Tailwind
 │
 └── README.md
----
+
+```
