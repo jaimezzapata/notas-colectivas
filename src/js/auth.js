@@ -10,6 +10,7 @@ document.getElementById("registroForm")?.addEventListener("submit", (e) => {
     window.location.href = "/public/login.html";
   } else {
     alert("Este correo ya está registrado.");
+    
   }
 });
 
