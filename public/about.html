@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre el proyecto | Notas Colectivas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen font-sans text-gray-800">
+
+    <!-- 🔵 Navegación -->
+    <header class="bg-blue-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide hover:scale-105 transition-transform duration-300">
+                Notas Colectivas
+            </h1>
+            <nav class="space-x-4 text-sm">
+                <a href="../index.html" class="hover:text-blue-300 transition duration-200">Inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 🧠 Contenido principal -->
+    <main class="max-w-4xl mx-auto px-6 py-16 text-center animate-fade-in">
+        <h2 class="text-4xl font-semibold text-blue-900 mb-4">Sobre el proyecto</h2>
+        <p class="text-lg text-gray-700 mb-8">
+            <strong>Notas Colectivas</strong> es una aplicación web educativa y colaborativa desarrollada como MPA
+            (Multi-Page Application) que permite a los usuarios registrar ideas, notas o apuntes en un entorno
+            compartido,
+            gestionando sesiones, edición y trazabilidad sin necesidad de servidor backend.
+        </p>
+
+        <div
+            class="bg-white shadow rounded-xl p-6 mb-10 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-left">
+            <img src="https://images.unsplash.com/photo-1599129674654-56da6c3f083f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Foto de Jaime Zapata"
+                class="w-32 h-32 rounded-full object-cover border-4 border-blue-200 shadow" />
+
+            <div>
+                <h3 class="text-xl font-bold text-blue-800 mb-1">👨‍💻 Jaime Zapata</h3>
+                <p class="text-gray-700">Desarrollador Frontend & Docente de Desarrollo de Software</p>
+                <p class="text-sm text-gray-500 mb-2">jaime.zapata.dev@gmail.com</p>
+                <p class="text-sm">
+                    <strong>LinkedIn:</strong>
+                    <a href="https://linkedin.com/in/jaimezapata" class="text-blue-600 hover:underline"
+                        target="_blank">linkedin.com/in/jaimezapata</a>
+                </p>
+                <p class="text-sm">
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/jaimezapata" class="text-blue-600 hover:underline"
+                        target="_blank">github.com/jaimezapata</a>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-10">
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h4 class="font-semibold text-blue-700 mb-2">🛠️ Tecnologías</h4>
+                <ul class="list-disc marker:text-blue-600 pl-6 text-sm text-gray-700 space-y-1 text-left">
+                    <li>HTML5 + TailwindCSS</li>
+                    <li>JavaScript Modular (ESM)</li>
+                    <li>SweetAlert2</li>
+                    <li>LocalStorage</li>
+                </ul>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h4 class="font-semibold text-blue-700 mb-2">📦 Funciones clave</h4>
+                <ul class="list-disc marker:text-blue-600 pl-6 text-sm text-gray-700 space-y-1 text-left">
+                    <li>Gestión de sesión</li>
+                    <li>CRUD de notas</li>
+                    <li>Historial de ediciones</li>
+                    <li>Filtros por autor y fechas</li>
+                    <li>Página de error dinámica</li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="../index.html"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium shadow transition">
+            Volver al inicio
+        </a>
+    </main>
+
+    <style>
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out;
+        }
+    </style>
+</body>
+
+</html>
